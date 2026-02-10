@@ -3,20 +3,24 @@ import alchemy.elements
 import alchemy
 
 
-def test_direct_module_access(func: Callable[[], str]):
-    print(f"{func}: {func()}")
+def test_direct_access():
+    print("Testing direct module access:")
+
+    elements_to_test = [
+        ("alchemy.elements.create_fire()", alchemy.elements.create_fire),
+        ("alchemy.elements.create_water()", alchemy.elements.create_water),
+        ("alchemy.elements.create_earth()", alchemy.elements.create_earth),
+        ("alchemy.elements.create_air()", alchemy.elements.create_air),
+    ]
+
+    for path, func in elements_to_test:
+        try:
+            print(f"{path}: {func()}")
+        except AttributeError:
+            print(f"{path}: AttributeError")
 
 
 if __name__ == "__main__":
     print("\n=== Sacred Scroll Mastery ===\n")
 
-    print("Testing direct module access:")
-    direct_modules: list[Callable[[], str]] = [
-        alchemy.elements.create_fire,
-        alchemy.elements.create_water,
-        alchemy.elements.create_earth,
-        alchemy.elements.create_air,
-    ]
-
-    for direct in direct_modules:
-        test_direct_module_access(direct)
+    test_direct_access()
