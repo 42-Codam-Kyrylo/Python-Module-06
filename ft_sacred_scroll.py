@@ -20,7 +20,35 @@ def test_direct_access():
             print(f"{path}: AttributeError")
 
 
+def test_package_access():
+    print("\nTesting package-level access (controlled by __init__.py):")
+    try:
+        print(f"alchemy.create_fire(): {alchemy.create_fire()}")
+    except AttributeError:
+        print("alchemy.create_fire(): AttributeError - not exposed")
+
+    try:
+        print(f"alchemy.create_water(): {alchemy.create_water()}")
+    except AttributeError:
+        print("alchemy.create_water(): AttributeError - not exposed")
+
+    try:
+        print(f"alchemy.create_earth(): {alchemy.create_earth()}")
+    except AttributeError:
+        print("alchemy.create_earth(): AttributeError - not exposed")
+
+    try:
+        print(f"alchemy.create_air(): {alchemy.create_air()}")
+    except AttributeError:
+        print("alchemy.create_air(): AttributeError - not exposed")
+
+
 if __name__ == "__main__":
     print("\n=== Sacred Scroll Mastery ===\n")
 
     test_direct_access()
+    test_package_access()
+
+    print("\nPackage metadata:")
+    print(f"Version: {alchemy.__version__}")
+    print(f"Author: {alchemy.__author__}")
