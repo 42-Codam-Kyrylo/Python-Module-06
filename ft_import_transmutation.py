@@ -1,4 +1,4 @@
-def full_module():
+def full_module() -> None:
     import alchemy.elements
 
     print(f"alchemy.elements.create_fire(): {alchemy.elements.create_fire()}")

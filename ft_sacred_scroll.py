@@ -2,7 +2,7 @@ import alchemy.elements
 import alchemy
 
 
-def test_direct_access():
+def test_direct_access() -> None:
     print("Testing direct module access:")
 
     elements_to_test = [
@@ -19,7 +19,7 @@ def test_direct_access():
             print(f"{path}: AttributeError")
 
 
-def test_package_access():
+def test_package_access() -> None:
     print("\nTesting package-level access (controlled by __init__.py):")
     try:
         print(f"alchemy.create_fire(): {alchemy.create_fire()}")
