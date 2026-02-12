@@ -10,7 +10,7 @@ def relative():
     import alchemy.transmutation.advanced as advanced_mod
 
     print("\nTesting Relative Imports (from advanced.py):")
-    print(f"philosophers_stone(): {advanced_mod.philosophers_stone()}")
+    print("philosophers_stone(): " f"{advanced_mod.philosophers_stone()}")
     print(f"elixir_of_life(): {advanced_mod.elixir_of_life()}")
 
 
@@ -18,11 +18,11 @@ def package_access():
     import alchemy.transmutation
 
     print("\nTesting Package Access:")
+    name = "alchemy.transmutation.lead_to_gold():"
+    print(f"{name} {alchemy.transmutation.lead_to_gold()}")
     print(
-        f"alchemy.transmutation.lead_to_gold(): {alchemy.transmutation.lead_to_gold()}"
-    )
-    print(
-        f"alchemy.transmutation.philosophers_stone(): {alchemy.transmutation.philosophers_stone()}"
+        "alchemy.transmutation.philosophers_stone(): "
+        f"{alchemy.transmutation.philosophers_stone()}"
     )
 
 

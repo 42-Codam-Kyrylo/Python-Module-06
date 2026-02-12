@@ -13,11 +13,18 @@ def strength_potion() -> str:
 def invisibility_potion() -> str:
     from .elements import create_air, create_water
 
-    return f"Invisibility potion brewed with {create_air()} and {create_water()}"
+    return (
+        f"Invisibility potion brewed with {create_air()} and {create_water()}"
+    )
 
 
 def wisdom_potion() -> str:
-    from .elements import create_air, create_earth, create_fire, create_water
+    from .elements import (
+        create_air,
+        create_earth,
+        create_fire,
+        create_water,
+    )
 
     return (
         "Wisdom potion brewed with all elements: "
